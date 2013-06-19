@@ -26,4 +26,8 @@ public class DevelopersService {
     public int count() throws SQLException {
         return list().size();
     }
+
+    public void delete(int id) throws SQLException{
+        developersRepository.delete(id);
+    }
 }

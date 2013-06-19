@@ -32,4 +32,9 @@ public class DevelopersRepository {
         developerDao.create(developer);
         return developer;
     }
+
+    public void delete(int id) throws SQLException{
+        developerDao.deleteById(id);
+
+    }
 }

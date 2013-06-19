@@ -8,6 +8,7 @@ developer.controllers.index = function(){
             devs: ko.observableArray(),
             count: ko.observable(),
             newName: ko.observable(),
+            developerId: ko.observable(),
             submit: function(){
                 $.ajax({
                     url: "/PairStairs/api/developers/new",
@@ -34,7 +35,19 @@ developer.controllers.index = function(){
                            viewModel.count(count);
                         }
                     );
-                }
+                },
+
+            deleteDev: function(){
+                $.ajax({
+                    url: "/PairStairs/api/developers/delete/" + this.developerId(),
+                    type: "DELETE"
+
+                }).success(
+                    function(){
+                       viewModel.listDevelopers();
+                    });
+            }
+
 
         };
 

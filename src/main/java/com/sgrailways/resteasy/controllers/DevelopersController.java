@@ -58,7 +58,7 @@ public class DevelopersController {
     }
     @POST
     @Path("/new")
-        public Response newDeveloper(Developer developer) {
+    public Response newDeveloper(Developer developer) {
         try {
             Developer createdDeveloper = developersService.create(developer);
             return Response
@@ -71,5 +71,24 @@ public class DevelopersController {
                     .entity(e)
                     .build();
         }
+
+    }
+
+    @DELETE
+    @Path("/delete/{id}")
+    public Response deleteDeveloper(@PathParam("id") int id){
+        try{
+            developersService.delete(id);
+            return Response
+                    .status(Response.Status.OK)
+                    .build();
+        } catch (SQLException e){
+            return   Response
+                    .status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity(e)
+                    .build();
+
+        }
+
     }
 }
