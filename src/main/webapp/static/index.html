@@ -7,12 +7,27 @@
 </head>
 <body>
 <h1>Whaddup Yo!</h1>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="js/index.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            developer.controllers.index().initialize();
-        });
-    </script>
+    <table>
+        <tbody data-bind="foreach: devs">
+            <tr>
+                <td data-bind="text: id"></td>
+                <td data-bind="text: name"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div data-bind="text: count"></div>
+
+    <p>Name: <input data-bind="value: newName"></p>
+    <button data-bind="click: submit">Create</button>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+    developer.controllers.index().initialize();
+    });
+</script>
 </body>
 </html>
