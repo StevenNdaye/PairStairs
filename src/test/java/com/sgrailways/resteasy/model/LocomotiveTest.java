@@ -12,5 +12,8 @@ public class LocomotiveTest {
     public void shouldExposeNameAndId(){
         Locomotive locomotive = new Locomotive("name");
         assertThat(locomotive.getName(), is("name"));
+
+        System.out.println(locomotive.getId());
+
     }
 }

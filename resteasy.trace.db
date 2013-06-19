@@ -1,0 +1,6 @@
+06-19 10:08:23 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOCOMOTIVES" not found; SQL statement:
+SELECT * FROM `locomotives`  [42102-164]
+06-19 10:11:44 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "LOCOMOTIVES" not found; SQL statement:
+SELECT * FROM `locomotives`  [42102-164]
