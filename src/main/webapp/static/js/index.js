@@ -1,13 +1,13 @@
-var locomotives = locomotives || {};
-locomotives.controllers = locomotives.controllers || {};
+var developer = developer || {};
+developer.controllers = developer.controllers || {};
 
-locomotives.controllers.index = function(){
+developer.controllers.index = function(){
     var initialize = function () {
-        $.getJSON("/PairStairs/api/locomotives").success(
+        $.getJSON("/PairStairs/api/developers").success(
             function(data){
                 data.forEach(
-                    function(train){
-                        $("body").append("<div>TRAIN: "+ train.name + " "+ train.id + "</div>")
+                    function(dev){
+                        $("body").append("<div>DEV: "+ dev.name + " "+ dev.id + "</div>")
                     }
             );
         });

@@ -55,7 +55,7 @@ h2 {
 
     resteasy {
         scripts = [
-                'src/main/sql/locomotives.sql'
+                'src/main/sql/developers.sql'
         ]
     }
 }

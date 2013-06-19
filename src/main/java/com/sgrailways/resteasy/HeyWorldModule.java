@@ -5,9 +5,9 @@ import com.google.inject.Module;
 import com.google.inject.name.Names;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
-import com.sgrailways.resteasy.controllers.LocomotivesController;
-import com.sgrailways.resteasy.repositories.LocomotivesRepository;
-import com.sgrailways.resteasy.service.LocomotivesService;
+import com.sgrailways.resteasy.controllers.DevelopersController;
+import com.sgrailways.resteasy.repositories.DevelopersRepository;
+import com.sgrailways.resteasy.service.DevelopersService;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -38,9 +38,9 @@ public class HeyWorldModule implements Module {
         }
 
 
-        binder.bind(LocomotivesController.class);
-        binder.bind(LocomotivesService.class);
+        binder.bind(DevelopersController.class);
+        binder.bind(DevelopersService.class);
         binder.bind(ConnectionSource.class).toInstance(connectionSource);
-        binder.bind(LocomotivesRepository.class);
+        binder.bind(DevelopersRepository.class);
     }
 }
