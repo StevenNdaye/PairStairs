@@ -47,6 +47,8 @@ dependencies {
     compile "com.google.inject:guice:3.0"
     compile "junit:junit:4.11"
     cucumber 'org.jruby:jruby-complete:1.7.4'
+    cucumber 'org.rubygems:ftools:0.0.0'
+    cucumber 'org.rubygems:rspec:2.13.0'
     cucumber 'org.rubygems:cucumber:1.3.2'
     cucumber 'org.rubygems:selenium-webdriver:2.33.0'
 
