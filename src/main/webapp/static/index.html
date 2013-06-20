@@ -9,19 +9,19 @@
 <h1>Whaddup Yo!</h1>
     <table>
         <tbody data-bind="foreach: devs">
-            <tr>
-                <td data-bind="text: id"></td>
-                <td data-bind="text: name"></td>
+            <tr class="developer" data-bind="attr: {'id': 'developer_'+id}">
+                <td class="id" data-bind="text: id"></td>
+                <td class="name" data-bind="text: name"></td>
             </tr>
         </tbody>
     </table>
 
     <div data-bind="text: count"></div>
 
-    <p>Developer Name: <input data-bind="value: newName"></p>
-    <button data-bind="click: submit">Create</button>
-    <p>Developer ID: <input data-bind="value: developerId"></p>
-    <button data-bind="click: deleteDev">Delete</button>
+    <p>Developer Name: <input id="createDeveloperNameTextBox" data-bind="value: newName"></p>
+    <button id="createDeveloperNameButton" data-bind="click: submit">Create</button>
+    <p>Developer ID: <input id="deleteDeveloperIdTextBox" data-bind="value: developerId"></p>
+    <button id="deleteDeveloperIdButton" data-bind="click: deleteDev">Delete</button>
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
