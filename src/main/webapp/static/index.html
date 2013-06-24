@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+
+        fieldset{
+            font:80%/1 sans-serif;
+            border:1px solid green;
+        }
+
+        legend {
+            border:1px solid green;
+            color:green;
+            font-size:90%;
+            text-align:left;
+        }
+
+        .mainDiv{
+            position:fixed;
+            top: 25%;
+            left: 50%;
+            width:30em;
+            height:30em;
+            margin-top: -5em;
+            margin-left: -15em;
+            border: 1px solid #ccc;
+            background-color: #f3f3f3;
+            border-radius: 15px;
+        }
+
+    </style>
     <meta charset="utf-8">
-    <title>Hey World!</title>
+    <title>Pair Stairs</title>
+
 
 </head>
 <body>
-<h1>Whaddup Yo!</h1>
+
+<div class ="mainDiv">
+<h1>Pair Stairs</h1>
+<fieldset>
+    <legend>Developers</legend>
     <table>
         <tbody data-bind="foreach: devs">
             <tr class="developer" data-bind="attr: {'id': 'developer_'+id}">
@@ -15,14 +48,20 @@
             </tr>
         </tbody>
     </table>
+    <div></div>
+    <div data-bind="text: count"> </div>
+</fieldset>
 
-    <div data-bind="text: count"></div>
 
+<fieldset> <legend>Create a new developer</legend>
     <p>Developer Name: <input id="createDeveloperNameTextBox" data-bind="value: newName"></p>
-    <button id="createDeveloperNameButton" data-bind="click: submit">Create</button>
+    <button id="createDeveloperNameButton" data-bind="click: submit">Create</button>   </fieldset>
+<fieldset><legend>Delete a developer</legend>
     <p>Developer ID: <input id="deleteDeveloperIdTextBox" data-bind="value: developerId"></p>
-    <button id="deleteDeveloperIdButton" data-bind="click: deleteDev">Delete</button>
+    <button id="deleteDeveloperIdButton" data-bind="click: deleteDev">Delete</button></fieldset>
 
+
+</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
