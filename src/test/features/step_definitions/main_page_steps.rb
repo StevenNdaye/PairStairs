@@ -50,3 +50,24 @@ Then /^Developer with ID "([^"]*)" should be deleted from the list of developers
         end
    }
 end
+
+When /^I enter developer ID "([^"]*)" in the Developer ID textbox in the update fieldset$/ do |expected_id|
+   current_id = @driver.find_element(:id, "updateDeveloperIdTextBox")
+   current_id.send_keys(expected_id)
+end
+
+And /^I enter the developer name "(.*?)" in the developer name textbox in the update fieldset$/ do |expected_name|
+   current_id = @driver.find_element(:id, "updateDeveloperNameTextBox")
+   current_id.send_keys(expected_name)
+end
+
+And /^I click on the "Update" button$/ do
+    delete_button =  @driver.find_element(:id, "updateDeveloperNameButton")
+    delete_button.click
+end
+
+
+
+
+
+

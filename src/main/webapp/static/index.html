@@ -17,10 +17,10 @@
 
         .mainDiv{
             position:fixed;
-            top: 25%;
+            top: 15%;
             left: 50%;
             width:30em;
-            height:30em;
+            height:40em;
             margin-top: -5em;
             margin-left: -15em;
             border: 1px solid #ccc;
@@ -59,6 +59,13 @@
 <fieldset><legend>Delete a developer</legend>
     <p>Developer ID: <input id="deleteDeveloperIdTextBox" data-bind="value: developerId"></p>
     <button id="deleteDeveloperIdButton" data-bind="click: deleteDev">Delete</button></fieldset>
+
+<fieldset>
+    <legend>Update developer's name</legend>
+    <p>Developer id:<input id="updateDeveloperIdTextBox" data-bind="value: newIdToUpdate"></p>
+    <p>Developer name:<input id="updateDeveloperNameTextBox" data-bind="value: newNameToUpdate"></p>
+    <button id="updateDeveloperNameButton" data-bind="click: updateDev">Update</button>
+</fieldset>
 
 
 </div>

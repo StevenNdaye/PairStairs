@@ -37,4 +37,9 @@ public class DevelopersRepository {
         developerDao.deleteById(id);
 
     }
+
+
+    public void update(Developer developer) throws SQLException{
+        developerDao.update(developer);
+    }
 }

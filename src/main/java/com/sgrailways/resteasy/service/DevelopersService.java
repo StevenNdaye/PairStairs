@@ -30,4 +30,9 @@ public class DevelopersService {
     public void delete(int id) throws SQLException{
         developersRepository.delete(id);
     }
+
+
+    public void update(Developer developer) throws  SQLException{
+        developersRepository.update(developer);
+    }
 }

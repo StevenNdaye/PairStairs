@@ -9,6 +9,9 @@ developer.controllers.index = function(){
             count: ko.observable(),
             newName: ko.observable(),
             developerId: ko.observable(),
+            newIdToUpdate: ko.observable(),
+            newNameToUpdate: ko.observable(),
+
             submit: function(){
                 $.ajax({
                     url: "/PairStairs/api/developers/new",
@@ -16,7 +19,9 @@ developer.controllers.index = function(){
                     contentType: "application/json",
                     data: JSON.stringify({name: this.newName()})
                 }).success(function(){
+                    viewModel.newName("");
                     viewModel.listDevelopers();
+
                 })
             },
 
@@ -35,7 +40,7 @@ developer.controllers.index = function(){
                            viewModel.count(count);
                         }
                     );
-                },
+            },
 
             deleteDev: function(){
                 $.ajax({
@@ -44,8 +49,24 @@ developer.controllers.index = function(){
 
                 }).success(
                     function(){
+                       viewModel.developerId("");
                        viewModel.listDevelopers();
-                    });
+                });
+            },
+
+            updateDev: function(){
+                $.ajax({
+                    url: "/PairStairs/api/developers/update",
+                    type: "PUT" ,
+                    contentType: "application/json",
+                    data: JSON.stringify({id:this.newIdToUpdate(), name: this.newNameToUpdate()})
+
+                }).success(
+                    function(){
+                       viewModel.newIdToUpdate("");
+                       viewModel.newNameToUpdate("");
+                       viewModel.listDevelopers();
+                });
             }
 
 

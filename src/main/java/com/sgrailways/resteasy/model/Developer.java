@@ -19,7 +19,6 @@ public class Developer {
         this.name = name;
     }
 
-
     public int getId() {
         return id;
     }

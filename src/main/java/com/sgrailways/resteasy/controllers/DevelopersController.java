@@ -38,6 +38,7 @@ public class DevelopersController {
                     .build();
         }
     }
+
     //GET /resteasy-hey-world/api/locomotives/count
     @GET
     @Path("/count")
@@ -56,6 +57,7 @@ public class DevelopersController {
                     .build();
         }
     }
+
     @POST
     @Path("/new")
     public Response newDeveloper(Developer developer) {
@@ -66,7 +68,7 @@ public class DevelopersController {
                     .entity(createdDeveloper)
                     .build();
         } catch (SQLException e) {
-            return   Response
+            return Response
                     .status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(e)
                     .build();
@@ -76,19 +78,40 @@ public class DevelopersController {
 
     @DELETE
     @Path("/delete/{id}")
-    public Response deleteDeveloper(@PathParam("id") int id){
-        try{
+    public Response deleteDeveloper(@PathParam("id") int id) {
+        try {
             developersService.delete(id);
             return Response
                     .status(Response.Status.OK)
                     .build();
-        } catch (SQLException e){
-            return   Response
+        } catch (SQLException e) {
+            return Response
                     .status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(e)
                     .build();
 
         }
+
+    }
+
+    @PUT
+    @Path("/update")
+    public Response updateDeveloper(Developer developer) {
+        try {
+            developersService.update(developer);
+            return Response
+                    .status(Response.Status.OK)
+                    .build();
+
+        } catch (SQLException e){
+            return Response
+                    .status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity(e)
+                    .build();
+
+
+        }
+
 
     }
 }

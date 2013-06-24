@@ -20,3 +20,11 @@ Feature: Greetings
     When I enter developer ID "1" in the Developer ID textbox
     And I click on the "Delete" button
     Then Developer with ID "1" should be deleted from the list of developers
+
+  Scenario: Should update existing developer
+    Given I visit the main page
+    When I enter developer ID "2" in the Developer ID textbox in the update fieldset
+    And I enter the developer name "MUSUBAO" in the developer name textbox in the update fieldset
+    And I click on the "Update" button
+    Then I should see id "2", name "MUSUBAO"
+
