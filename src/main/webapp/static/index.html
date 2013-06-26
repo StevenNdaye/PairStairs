@@ -17,10 +17,10 @@
 
         .mainDiv{
             position:fixed;
-            top: 15%;
+            top: 10%;
             left: 50%;
             width:30em;
-            height:40em;
+            height:50em;
             margin-top: -5em;
             margin-left: -15em;
             border: 1px solid #ccc;
@@ -28,10 +28,18 @@
             border-radius: 15px;
         }
 
+        #pair { margin: 1em; border-collapse: collapse;}
+        thead { background: #228B22; }
+        th { padding: .4em; border: 2px green solid;}
+        #pair_td { padding: .4em; border: 2px green solid;}
+        .developer { padding: .4em; border: 2px green solid;}
+
+
+
+
     </style>
     <meta charset="utf-8">
     <title>Pair Stairs</title>
-
 
 </head>
 <body>
@@ -43,6 +51,7 @@
     <table>
         <tbody data-bind="foreach: devs">
             <tr class="developer" data-bind="attr: {'id': 'developer_'+id}">
+
                 <td class="id" data-bind="text: id"></td>
                 <td class="name" data-bind="text: name"></td>
             </tr>
@@ -67,15 +76,35 @@
     <button id="updateDeveloperNameButton" data-bind="click: updateDev">Update</button>
 </fieldset>
 
+<fieldset>
+    <legend>Pair stairs</legend>
+    <table id="pair">
+        <thead>
+        <tr>
+            <th data-bind="attr: { colspan: count() - 1 }">Navigator</th>
+            <th>Driver</th>
+
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: pairings">
+            <tr class="developer" data-bind="text: dev.name, foreach: others">
+                <td id = "pair_td" data-bind="text: name"></td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>
+
 
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script src="js/index.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
-    developer.controllers.index().initialize();
+        developer.controllers.index().initialize();
+
     });
 </script>
 </body>
