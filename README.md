@@ -17,6 +17,13 @@ Getting Started
 7. go to `http://localhost:8080/PairStairs/static/index.html` to see static files
 8. tinker, expand, enjoy
 
+To Run the version till Steven last commit
+==========================================
+1. Run gradle clean
+2. Run gradle tomcatRun
+3. Shut the tomcat down(CTRL+C)
+4. Run gradle cucumber for all the tests to pass
+
 License
 =======
 Apache 2
